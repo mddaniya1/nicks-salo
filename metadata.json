@@ -1,0 +1,6 @@
+{
+  "name": "Nick's Salon — Men's Grooming by Qamar Bashir",
+  "description": "Premium men's grooming salon in North Nazimabad, Karachi by Qamar Bashir. Precision haircuts, beard sculpting, and tailored personal care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

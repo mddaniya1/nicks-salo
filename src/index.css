@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   SCISSOR REFERENCE CENTRALIZED COLOR SYSTEM (EXACT EXTRACTED TOKENS)
+   ========================================================================== */
+:root {
+  /* Backgrounds */
+  --color-primary-bg: #f7f5f0;          /* token-04d39632: Cream canvas */
+  --color-secondary-bg: #e5d9ca;        /* token-bb657d79: Warm sand */
+  --color-dark-bg: #1f1c19;             /* token-4f05f468: Deep espresso dark */
+  --color-dark-surface: #3b3631;        /* token-5d37f567: Elevated dark / hover surface */
+  --color-dark-transparent: #1f1c1900;  /* token-c60f25b8: Transparent nav state */
+
+  /* Typography */
+  --color-heading: #302c28;             /* token-a93021d8: Primary dark ink */
+  --color-body-text: #6b635b;           /* token-a3dbaa52: Muted taupe copy */
+  --color-heading-inverse: #f7f5f0;     /* token-04d39632: Cream text on dark */
+  --color-body-inverse: #c2b8ab;        /* token-68079b37: Muted text on dark */
+
+  /* Accents */
+  --color-accent: #92745b;              /* token-df7ae08d: Warm bronze accent */
+  --color-accent-dark: #735a45;         /* token-ac5130b5: Deep bronze active/label */
+  --color-accent-light: #c9a98a;        /* token-741cae64: Light camel on dark */
+
+  /* Borders & Hairlines */
+  --color-border: #dcd2c4;              /* token-efee9b53: Light divider */
+  --color-border-dark: #f5eee61f;       /* token-a48a902b: 12% border on dark */
+  --color-border-glass: #f5eee63d;      /* token-355b50d7: 24% glass border on dark */
+
+  /* Glass & Buttons */
+  --color-glass-bg: #f5eee61f;          /* token-a48a902b: Frosted glass fill */
+  --color-button-bg: #302c28;           /* token-a93021d8: Dark button bg */
+  --color-button-text: #f7f5f0;         /* token-04d39632: Dark button text */
+  --color-button-hover: #3b3631;        /* token-5d37f567: Dark button hover */
+  --color-button-cream-bg: #f7f5f0;     /* token-04d39632: Cream button bg */
+  --color-button-cream-text: #302c28;   /* token-a93021d8: Cream button text */
+  --color-button-cream-hover: #e5d9ca;  /* token-bb657d79: Cream button hover */
+
+  /* Overlays & Scrims */
+  --color-scrim-dark: rgb(31, 28, 25);
+  --color-scrim-card: rgba(21, 10, 8, 0.72);
+  --color-scrim-badge: rgba(0, 0, 0, 0.75);
+}
+
+/* Exact General Sans woff2 faces matching Scissor reference */
+@font-face {
+  font-family: "General Sans";
+  src: url("https://framerusercontent.com/third-party-assets/fontshare/wf/MFQT7HFGCR2L5ULQTW6YXYZXXHMPKLJ3/YWQ244D6TACUX5JBKATPOW5I5MGJ3G73/7YY3ZAAE3TRV2LANYOLXNHTPHLXVWTKH.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("https://framerusercontent.com/third-party-assets/fontshare/wf/GQOITZI54NH6HDBP26XAMQYTXB4JQ3NQ/VY7SXNCPHYFLQTOFY72GM4OZTBH62U2D/AHPLTG2YASI4OYLGJV4CF3P25VBHPK5X.woff2") format("woff2");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("https://framerusercontent.com/third-party-assets/fontshare/wf/3RZHWSNONLLWJK3RLPEKUZOMM56GO4LJ/BPDRY7AHVI3MCDXXVXTQQ76H3UXA63S3/SB2OEB6IKZPRR6JT4GFJ2TFT6HBB6AZN.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("https://framerusercontent.com/third-party-assets/fontshare/wf/ST6AL2GVQRSWVDOXZNSHY2SMWYYSVFEK/WJ26NN5JS6IPLBXEKX7WHB7HACXDTAKH/H7W54QQR2V6KL5KMDA2PD2KSQRCZHPRE.woff2") format("woff2");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("https://framerusercontent.com/third-party-assets/fontshare/wf/KWXO5X3YW4X7OLUMPO4X24HQJGJU7E2Q/VOWUQZS3YLP66ZHPTXAFSH6YACY4WJHT/NIQ54PVBBIWVK3PFSOIOUJSXIJ5WTNDP.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@theme {
+  --font-sans: "General Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "General Sans", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: "General Sans", system-ui, -apple-system, sans-serif;
+    font-feature-settings: "blwf" 1, "cv03" 1, "cv04" 1, "cv09" 1, "cv11" 1;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-primary-bg);
+    color: var(--color-heading);
+  }
+
+  ::selection {
+    background-color: var(--color-secondary-bg);
+    color: var(--color-heading);
+  }
+}
+
+/* Scissor exact typography scale utilities */
+.type-h1 {
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 1em;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 810px) {
+  .type-h1 {
+    font-size: 84px;
+  }
+}
+@media (min-width: 1200px) {
+  .type-h1 {
+    font-size: 112px;
+  }
+}
+
+.type-h2 {
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.02em;
+  letter-spacing: -0.04em;
+}
+@media (min-width: 810px) {
+  .type-h2 {
+    font-size: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .type-h2 {
+    font-size: 64px;
+  }
+}
+
+.type-h3-lg {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.05em;
+  letter-spacing: -0.035em;
+}
+@media (min-width: 810px) {
+  .type-h3-lg {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1200px) {
+  .type-h3-lg {
+    font-size: 44px;
+  }
+}
+
+.type-statement {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.18em;
+  letter-spacing: -0.03em;
+}
+@media (min-width: 810px) {
+  .type-statement {
+    font-size: 32px;
+  }
+}
+@media (min-width: 1200px) {
+  .type-statement {
+    font-size: 40px;
+  }
+}
+
+.type-card-title {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.15em;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 810px) {
+  .type-card-title {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1200px) {
+  .type-card-title {
+    font-size: 26px;
+  }
+}
+
+.type-lead {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 810px) {
+  .type-lead {
+    font-size: 21px;
+  }
+}
+@media (min-width: 1200px) {
+  .type-lead {
+    font-size: 22px;
+  }
+}
+
+.type-body-lg {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55em;
+}
+@media (min-width: 810px) {
+  .type-body-lg {
+    font-size: 17px;
+  }
+}
+@media (min-width: 1200px) {
+  .type-body-lg {
+    font-size: 18px;
+  }
+}
+
+.type-kicker {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2em;
+  letter-spacing: 0.02em;
+}
+
+/* Marquee animation matching Scissor continuous ticker */
+@keyframes scissor-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: scissor-marquee 34s linear infinite;
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: scissor-marquee 44s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
+
+.lookbook-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+.lookbook-scroll::-webkit-scrollbar-track {
+  background: var(--color-border);
+}
+.lookbook-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-marquee-slow {
+    animation: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
